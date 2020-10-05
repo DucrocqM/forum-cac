@@ -25,8 +25,8 @@ il est créer en markdown (regarde sur le net)
 
 
 # à faire
-- modifier route pour mettre forum comme constroller de base
-- mettre bootsrap et jquery dans le fichier discussion.twig
+..- modifier route pour mettre forum comme constroller de base
+- mettre bootstrap et jquery dans le fichier discussion.twig
 - créer sur cette base la page theme.twig (elle affiche la liste de thèmes, et la série de discussions possible, je te laisse t'amuser avec bootstrap)
-- créer une route discussion qui nous emmène via un controller discussion sur discussion.twig
-- créer une route forums qui nous emmène via un controller forum sur forum.twig
+..- créer une route discussion qui nous emmène via un controller discussion sur discussion.twig
+..- créer une route forums qui nous emmène via un controller forum sur forum.twig
