@@ -14,5 +14,6 @@
 		"php": ">=5.2.4",
 		"twig/twig": "^2.4",
 		"kenjis/codeigniter-cli": "^0.1.0",
-		"twbs/bootstrap": "^4.5"
+		"twbs/bootstrap": "^4.5",
+		"fortawesome/font-awesome": "^5.15"
 	}}

@@ -1,165 +1,103 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="">
-	<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-	<meta name="generator" content="Jekyll v4.1.1">
-	<title>Starter Template · Bootstrap</title>
-
-	<link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/starter-template/">
-
-	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-	 integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
-	<!-- Favicons -->
-	<link rel="apple-touch-icon" href="/docs/4.5/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-	<link rel="icon" href="/docs/4.5/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-	<link rel="icon" href="/docs/4.5/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-	<link rel="manifest" href="/docs/4.5/assets/img/favicons/manifest.json">
-	<link rel="mask-icon" href="/docs/4.5/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
-	<link rel="icon" href="/docs/4.5/assets/img/favicons/favicon.ico">
-	<script src="https://kit.fontawesome.com/ea576b5246.js" crossorigin="anonymous"></script>
-	<meta name="msapplication-config" content="/docs/4.5/assets/img/favicons/browserconfig.xml">
-	<meta name="theme-color" content="#563d7c">
-
-
-	<!-- Custom styles for this template -->
-	<link href="/front/discussion.css" rel="stylesheet">
-</head>
-
-<body>
-	<header>
-		<div class="card text-white">
-			<img src="http://lorempixel.com/output/abstract-q-c-1107-297-7.jpg" class="card-img" alt="...">
-			<div class="card-img-overlay">
-				<h5 class="card-title">CAC SURGERES</h5>
-				<p class="card-text">Centre d'Animation et de Citoyenneté de Surgeres</p>
-			</div>
-		</div>
-		<nav class="navbar navbar-light bg-light">
-		<a class="navbar-brand" href="#">
-			<span> <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house-door-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-  			<path d="M6.5 10.995V14.5a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .146-.354l6-6a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 .146.354v7a.5.5 0 0 1-.5.5h-4a.5.5 0 0 1-.5-.5V11c0-.25-.25-.5-.5-.5H7c-.25 0-.5.25-.5.495z"/>
-  			<path fill-rule="evenodd" d="M13 2.5V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
-			</svg>  Acceuil </span>
-		</a>
-		</nav>
-	</header> 
-	 <!-- DEBUT DE MAIN -->
-	<main role="main" class="container mt-3">
-		<div class="container-fluid mt-100">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="media">
-						<div class="media-body">
+<main role="main" class="container mt-3">
+	<div class="container-fluid mt-100">
+		<div class="row">
+			<a href="/theme/creer">Créer un nouveau thème</a>
+			{% for theme in themes %}
+			<div class="col-md-12">
+				<div class="media">
+					<div class="media-body">
 						<div class="bg-danger text-white rounded-pill mt-2">
-							<h3 class="mt-0 text-center">Environnement</h3>
-							<p class="mb-5 text-center">Pour tous ce qui touche à notre planete, à sa protection.</p>
+							<h3 class="mt-0 text-center">{{theme.titre}}</h3>
+							<p class="mb-5 text-center">{{theme.soustitre}}
+							</p>
 						</div>
-							<ul class="list-unstyled">
-								<li class="media border border-darksecondary border-left-0">
-									<img src="https://picsum.photos/64/64" class="m-auto" alt="...">
-									<div class="media-body ml-2">
+						<ul class="list-unstyled">
+							<li class="media border border-darksecondary border-left-0">
+								<img src="https://picsum.photos/64/64" class="m-auto" alt="...">
+								<div class="media-body ml-2">
 									<h5 class="mt-0 mb-1">List-based media object</h5>
-									<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-									</div>
-								</li>
-								<li class="media my-4 border border-darksecondary border-left-0">
-									<img src="https://picsum.photos/64/64" class="m-auto" alt="...">
-									<div class="media-body ml-2">
-									<p><h5 class="mt-0 mb-1">List-based media object</h5>
-									Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-									</div>
-								</li>
-								<li class="media border border-darksecondary border-left-0">
-									<img src="https://picsum.photos/64/64" class="m-auto" alt="...">
-									<div class="media-body ml-2">
+									<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+										sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra
+										turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia
+										congue felis in faucibus.</p>
+								</div>
+							</li>
+							<li class="media my-4 border border-darksecondary border-left-0">
+								<img src="https://picsum.photos/64/64" class="m-auto" alt="...">
+								<div class="media-body ml-2">
+									<p>
+										<h5 class="mt-0 mb-1">List-based media object</h5>
+										Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
+										ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus
+										viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec
+										lacinia congue felis in faucibus.
+									</p>
+								</div>
+							</li>
+							<li class="media border border-darksecondary border-left-0">
+								<img src="https://picsum.photos/64/64" class="m-auto" alt="...">
+								<div class="media-body ml-2">
 									<h5 class="mt-0 mb-1">List-based media object</h5>
-									<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-									</div>
-								</li>
-								</ul>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-				<div class="col-md-12">
-					<div class="media">
-						<div class="media-body">
-							<div class="bg-danger text-white rounded-pill mt-2">
-								<h3 class="mt-0 text-center">Jeunesse</h3>
-								<p class="mb-5 text-center">Education - surveillance - Soutiens - Et bien d'autres</p>
-							</div>
-							<ul class="list-unstyled">
-								<li class="media border border-darksecondary border-left-0">
-									<img src="https://picsum.photos/64/64" class="m-auto" alt="...">
-									<div class="media-body ml-2">
-									<h5 class="mt-0 mb-1">List-based media object</h5>
-									<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-									</div>
-								</li>
-								<li class="media my-4 border border-darksecondary border-left-0">
-									<img src="https://picsum.photos/64/64" class="m-auto" alt="...">
-									<div class="media-body ml-2">
-									<p><h5 class="mt-0 mb-1">List-based media object</h5>
-									Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-									</div>
-								</li>
-								<li class="media border border-darksecondary border-left-0">
-									<img src="https://picsum.photos/64/64" class="m-auto" alt="...">
-									<div class="media-body ml-2">
-									<h5 class="mt-0 mb-1">List-based media object</h5>
-									<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
-									</div>
-								</li>
-								</ul>
-						</div>
+									<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+										sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra
+										turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia
+										congue felis in faucibus.</p>
+								</div>
+							</li>
+						</ul>
 					</div>
 				</div>
 			</div>
-		</div>
-	</main><!-- /.container -->
-	<footer class="mt-5">
-		<div class="card bg-dark text-dark">
-		<img src="http://lorempixel.com/output/abstract-q-c-1000-130-5.jpg" class="card-img" alt="...">
-			<div class="card-img-overlay">
-				<div class="row row-cols-1 row-cols-md-3">
-					<div class="col mb-4">
-						<div class="card h-100">
-							<div class="card-body">
-								<h5 class="card-title">Infos Pratiques</h5>
-								<p class="card-text ">
-									<ul>
-										<li>Adresse : 5, rue Jean-Philippe Rameau 17700 SURGÈRES</li>
-										<li>Téléphone : 05 46 07 16 39 </li>
-										<li>Courriel : cac.surgeres@wanadoo.fr</li>
-									</ul>
-								</p>
-							</div>
-						</div>
-					</div>
-					<div class="col mb-4">
-						<div class="card h-100">
-							<div class="card-body">
-								<h5 class="card-title">Nos reseaux</h5>
-								<p class="card-text"><i class="fab fa-facebook" size:9x></i></p>
-							</div>
-						</div>
-					</div>
-					<div class="col mb-4">
-						<div class="card h-100">
-							<div class="card-body">
-									<h5 class="card-title">Nos heures d'ouvertures</h5>
-									<p class="card-text">Nous avons le plaisir de vous acceuillir du Lundi au vendredi de 9h30 à 12 h30 et de 14h00 à 17h30</p>
-							</div>
-						</div>
-					</div>
-		</div>
-	</footer>
+			{% endfor %}
 
-</body>
-</html>
+
+
+			{# <div class="row">
+					<div class="col-md-12">
+						<div class="media">
+							<div class="media-body">
+								<div class="bg-danger text-white rounded-pill mt-2">
+									<h3 class="mt-0 text-center">Jeunesse</h3>
+									<p class="mb-5 text-center">Education - surveillance - Soutiens - Et bien d'autres
+									</p>
+								</div>
+								<ul class="list-unstyled">
+									<li class="media border border-darksecondary border-left-0">
+										<img src="https://picsum.photos/64/64" class="m-auto" alt="...">
+										<div class="media-body ml-2">
+											<h5 class="mt-0 mb-1">List-based media object</h5>
+											<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
+												ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus
+												viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.
+												Donec lacinia congue felis in faucibus.</p>
+										</div>
+									</li>
+									<li class="media my-4 border border-darksecondary border-left-0">
+										<img src="https://picsum.photos/64/64" class="m-auto" alt="...">
+										<div class="media-body ml-2">
+											<p>
+												<h5 class="mt-0 mb-1">List-based media object</h5>
+												Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
+												ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus
+												viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.
+												Donec lacinia congue felis in faucibus.
+											</p>
+										</div>
+									</li>
+									<li class="media border border-darksecondary border-left-0">
+										<img src="https://picsum.photos/64/64" class="m-auto" alt="...">
+										<div class="media-body ml-2">
+											<h5 class="mt-0 mb-1">List-based media object</h5>
+											<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
+												ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus
+												viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.
+												Donec lacinia congue felis in faucibus.</p>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div> #}
+		</div>
+</main><!-- /.container -->
