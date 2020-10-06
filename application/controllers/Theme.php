@@ -30,4 +30,11 @@ class Theme extends CI_Controller
 		$themes[] = array('titre' => $_POST['titre'], 'soustitre' => $_POST['soustitre']);
 		file_put_contents(getcwd() . '/donnees/themes.json', (json_encode($themes, JSON_PRETTY_PRINT)));
 	}
+	function modifier()
+	{
+		echo $this->twig->render('header');
+		$data['themes'] = json_encode(file_get_contents('donnees/themes.json')); //on mets les donnes du fichier dans une variable
+		echo $this->twig->render('theme_modif', $data); //on envoie les données au twig
+		echo $this->twig->render('footer');
+	}
 }

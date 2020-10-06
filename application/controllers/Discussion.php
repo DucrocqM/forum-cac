@@ -12,8 +12,9 @@ class Discussion extends CI_Controller
 
 	public function index()
 	{
-		$this->twig->render('header.twig');
-		$this->twig->render('discussion.twig');
-		$this->twig->render('footer.twig');
+		echo $this->twig->render('header');
+		$data['discussion'] = json_decode(file_get_contents('donnees/discussion.json')); //on mets les donnes du fichier dans une variable
+		echo $this->twig->render('discussion', $data); //on envoie les données au twig
+		echo $this->twig->render('footer');
 	}
 }
