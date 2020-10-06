@@ -20,10 +20,10 @@ class Theme extends CI_Controller
 
 	// je t'explique en quelques mots comment on peut faire
 	// c'est une méthode souvent utiliser pour avoir un formulaire créer et modifier qui soit identique
-	// pour créer un thème comme d'abithude
-	// pour le modifier on affiche un nouvea utwig qui affiche la liste des thèmes
+	// pour créer un thème comme d'habitude
+	// pour le modifier on affiche un nouveau twig qui affiche la liste des thèmes
 	// ensuite quand l'utilisateur à choisi on l'envoie sur  créer mais on ajoute une variable pour dire à créer que l'on est en train de modifier un thème existant
-	// ensuite crtéer envoie sur sauvegarder qui doit lui aussi avoir une valeur pour savoir qu'il sauvegarde un thème déja existant.
+	// ensuite créer envoie sur sauvegarder qui doit lui aussi avoir une valeur pour savoir qu'il sauvegarde un thème déja existant.
 	// tu verras je t'ai mis des commentaires partout
 
 	// on peut imaginer d'autres méthodes, c'est ce que l'on fera pour modifier les forums
@@ -40,10 +40,6 @@ class Theme extends CI_Controller
 		//ça envoie à créer (et oui, on ajoute à créer une variable optionnelle avec le nom du thème)
 		//regarde j'ai modifier créer
 
-		echo $this->twig->render('header');
-		$data['themes'] = json_encode(file_get_contents('donnees/themes.json')); //on mets les donnes du fichier dans une variable
-		echo $this->twig->render('theme_modif', $data); //on envoie les données au twig
-		echo $this->twig->render('footer');
 	}
 	//avant la function creer() cette function ne pouvait que créer
 	//maintenant elle sait modifier
@@ -61,6 +57,9 @@ class Theme extends CI_Controller
 	{
 		$themes = json_decode(file_get_contents('donnees/themes.json'), true);
 		//on ajoute une condition, je te laisse l'écrire pour modifier la valeur du tableau si on est dans le cas de modification
+		// if modifierclick
+		// { $themes[] = array('titre' => $_POST['amodifier.titre'], 'soustitre' => $_POST['amodifier.soustitre']); }
+		// else { Shéma de Sauvegarde classique. }
 		$themes[] = array('titre' => $_POST['titre'], 'soustitre' => $_POST['soustitre']);
 		file_put_contents(getcwd() . '/donnees/themes.json', (json_encode($themes, JSON_PRETTY_PRINT)));
 	}
