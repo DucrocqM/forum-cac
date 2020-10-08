@@ -30,24 +30,15 @@ class Theme extends CI_Controller
 	// n'oublie pas que le but de ce projet est que tu apprennes des techniques ;-)
 	// donc on essai de voir le maximum de choses et des façons différentes de faire
 
-	function modifier()
-	{
-		//c'est pas bon ;-)
-		//récupérer les données du json
 
-		//on affiche un formulaire avec la liste des thèmes pour que l'utilisateur choisisse un thème à modifier
 
-		//ça envoie à créer (et oui, on ajoute à créer une variable optionnelle avec le nom du thème)
-		//regarde j'ai modifier créer
-
-	}
 	//avant la function creer() cette function ne pouvait que créer
 	//maintenant elle sait modifier
 	function creer($theme = '') //si on envoie une valeur par /theme/creer/ecologie par exemple
 	{
 		echo $this->twig->render('header');
 		$data['themes'] = json_encode(file_get_contents('donnees/themes.json')); //on mets les donnes du fichier dans une variable
-		//on dis $data['amodifier']=$theme comme cela on envoie cette variable au twig
+		$data['amodifier']=$theme; // comme cela on envoie cette variable au twig
 		//regarde dans le twig
 
 		echo $this->twig->render('theme_creer', $data); //on envoie les données au twig
@@ -64,3 +55,4 @@ class Theme extends CI_Controller
 		file_put_contents(getcwd() . '/donnees/themes.json', (json_encode($themes, JSON_PRETTY_PRINT)));
 	}
 }
+

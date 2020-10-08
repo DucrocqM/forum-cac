@@ -27,11 +27,17 @@
  	</div>
  </main>
 {# TEST DU IF
-	{% if condition1 and not empty %}
-		Enregistrer la modification
-		$this->amodifier.theme;
+	{% if titre not empty %}
+		<select name="themes">
+			<option value="">  </option>
+			 foreach ($themes as $titre =>$titres )
+				{
+					<option value="titre"> echo $titres </option>
+				}
+		</select>
 	{% else %}
-		return error;
+		;
 	{% endif %}
 	
  #}
+
