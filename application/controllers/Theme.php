@@ -54,5 +54,14 @@ class Theme extends CI_Controller
 		$themes[] = array('titre' => $_POST['titre'], 'soustitre' => $_POST['soustitre']);
 		file_put_contents(getcwd() . '/donnees/themes.json', (json_encode($themes, JSON_PRETTY_PRINT)));
 	}
+
+	public function supprimer ()
+	{
+		// supprimer dans le Json Apres confirmation via la pop up.
+		//1 - confirmation pop up
+		// 2 Récup de la réponse, si Oui
+		// 3 supprimer dans le json
+		// Si non 3 - Avorter l'opération.
+	}
 }
 

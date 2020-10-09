@@ -1,25 +1,21 @@
  <main role="main" class="container mt-3">
  	<div class="container-fluid mt-100">
  		<div class="row">
- 			<form method="POST" action="/theme/sauvegarder/{{amodifier.titre}}">
- 				{#on ajoute une variable optionnelle #}
+ 			<form method="POST" action="/theme/sauvegarder/creer">
  				<div class="form-group">
  					<label for="nomtheme">Nom du thème</label>
- 					<input type="text" name="titre" class="form-control" id="nomtheme" aria-describedby="theme"
- 						{# on ajoute une valeur à l'input #} placeholder="Entrer le nom du thème"
- 						value="{{amodifier.titre}}">
+ 					<input type="text" name="titre" class="form-control" id="nomtheme" aria-describedby="theme" placeholder="Entrer le nom du thème">
  					<small id="themeHelp" class="form-text text-muted">Essayer de trouver un mot simple et
  						explicite</small>
  				</div>
  				<div class="form-group">
  					<label for="explicationtheme">Le thème en quelques mots</label>
  					<input type="text" name="soustitre" class="form-control" id="explicationtheme"
- 						aria-describedby="theme" {# je te laisse faire pareil pour le soustitre #}
+ 						aria-describedby="theme"
  						placeholder="Expliquer ce qu'il englobe">
  					<small id="explicationthemeHelp" class="form-text text-muted">Essayer de trouver une petite
  						phrase</small>
  				</div>
- 				{# pour te montrer twig, on modifie le texte avec if, je te laisse chercher dans la doc de twig #}
  				<button type="submit" class="btn btn-primary">Créer le thème</button>
  			</form>
  		</div>
