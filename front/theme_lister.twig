@@ -1,0 +1,19 @@
+<!-- MODIFIER LE TITRE ET LA DESCRIPTION DU THEME -->
+<main role="main" class="container mt-3">
+	<div class="container-fluid mt-100">
+		<div class="row">
+			<form method="POST" action="/theme/sauvegarder/modifier">
+				{#on ajoute une variable optionnelle #}
+				<div class="form-group">
+					<label for="nomtheme"> Choississez le thème à modifier </label>
+					<select name="themes" id="themes-select">
+						{% for theme in themes %}
+						<option value="titre"> {{themes.titre}} </option>
+						{% endfor %}
+					</select>
+					<button type="submit" class="btn btn-primary">Modifier</button>
+			</form>
+		</div>
+	</div>
+</main>
+{# Comment faire pour affichier le soustitre lié au titre sélectionné? #}

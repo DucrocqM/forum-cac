@@ -18,30 +18,27 @@ class Theme extends CI_Controller
 		echo $this->twig->render('footer');
 	}
 
-	// je t'explique en quelques mots comment on peut faire
-	// c'est une méthode souvent utiliser pour avoir un formulaire créer et modifier qui soit identique
-	// pour créer un thème comme d'habitude
-	// pour le modifier on affiche un nouveau twig qui affiche la liste des thèmes
-	// ensuite quand l'utilisateur à choisi on l'envoie sur  créer mais on ajoute une variable pour dire à créer que l'on est en train de modifier un thème existant
-	// ensuite créer envoie sur sauvegarder qui doit lui aussi avoir une valeur pour savoir qu'il sauvegarde un thème déja existant.
-	// tu verras je t'ai mis des commentaires partout
-
-	// on peut imaginer d'autres méthodes, c'est ce que l'on fera pour modifier les forums
-	// n'oublie pas que le but de ce projet est que tu apprennes des techniques ;-)
-	// donc on essai de voir le maximum de choses et des façons différentes de faire
-
-
-
-	//avant la function creer() cette function ne pouvait que créer
-	//maintenant elle sait modifier
-	function creer($theme = '') //si on envoie une valeur par /theme/creer/ecologie par exemple
+	function creer()
 	{
 		echo $this->twig->render('header');
-		$data['themes'] = json_encode(file_get_contents('donnees/themes.json')); //on mets les donnes du fichier dans une variable
-		$data['amodifier']=$theme; // comme cela on envoie cette variable au twig
-		//regarde dans le twig
-
 		echo $this->twig->render('theme_creer', $data); //on envoie les données au twig
+		echo $this->twig->render('footer');
+	}
+	function lister()
+	{
+		echo $this->twig->render('header');
+		$data['themes'] = json_decode(file_get_contents('donnees/themes.json')); //on mets les donnes du fichier dans une variable
+		echo $this->twig->render('theme_lister', $data); //on envoie les données au twig
+		echo $this->twig->render('footer');
+	}
+	function modifier()
+	{
+
+		/* comment on récupère le thème que l'on doir modifier ? ------------------------------------------------------------ */
+		echo $this->twig->render('header');
+		$data['themes'] = json_decode(file_get_contents('donnees/themes.json')); //on mets les donnes du fichier dans une variable
+		/* comment récupérer directement juste les données du thème à modifier ? -------------------------------------------- */
+		echo $this->twig->render('theme_modif', $data); //on envoie les données au twig
 		echo $this->twig->render('footer');
 	}
 	public function sauvegarder($theme = '') //toujours pour modifier
@@ -55,7 +52,7 @@ class Theme extends CI_Controller
 		file_put_contents(getcwd() . '/donnees/themes.json', (json_encode($themes, JSON_PRETTY_PRINT)));
 	}
 
-	public function supprimer ()
+	public function supprimer()
 	{
 		// supprimer dans le Json Apres confirmation via la pop up.
 		//1 - confirmation pop up
@@ -64,4 +61,3 @@ class Theme extends CI_Controller
 		// Si non 3 - Avorter l'opération.
 	}
 }
-
